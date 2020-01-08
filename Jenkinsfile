@@ -5,7 +5,7 @@
 
 pipeline {
 	agent {
-        node { label 'master' }
+        node { label 'ubuntuvps' }
 	}
 
 	stages {
