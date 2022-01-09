@@ -1,3 +1,22 @@
+Given /^OUTPUT is printed/ do
+    stdoutOutput = all_commands.map { |c| c.stdout }.join("\n").strip
+    if stdoutOutput != ""
+        log "STDOUT>>>"
+        log stdoutOutput
+        log "<<<STDOUT"
+    else
+        log "STDOUT is EMPTY"
+    end
+    stderrOutput = all_commands.map { |c| c.stderr }.join("\n").strip
+    if stderrOutput != ""
+        log "STDERR>>>"
+        log stderrOutput
+        log "<<<STDERR"
+    else
+        log "STDERR is EMPTY"
+    end
+end
+
 Given /^the output should contain PWD$/ do 
 	#puts ENV['PWD']
 	#puts ENV['HOME']
